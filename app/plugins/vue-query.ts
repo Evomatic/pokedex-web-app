@@ -11,6 +11,13 @@ import {
 // Nuxt 3 app aliases
 import { defineNuxtPlugin, useState } from '#imports'
 
+declare global {
+  interface Window {
+    __TANSTACK_QUERY_CLIENT__:
+    import('@tanstack/query-core').QueryClient
+  }
+}
+
 export default defineNuxtPlugin((nuxt) => {
   const vueQueryState = useState<DehydratedState | null>('vue-query')
 
@@ -30,7 +37,9 @@ export default defineNuxtPlugin((nuxt) => {
 
   if (import.meta.client) {
     nuxt.hooks.hook('app:created', () => {
-      hydrate(queryClient, vueQueryState.value)
+      if (vueQueryState.value) hydrate(queryClient, vueQueryState.value)
     })
   }
+
+  window.__TANSTACK_QUERY_CLIENT__ = queryClient
 })
