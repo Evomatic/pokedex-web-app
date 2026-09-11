@@ -18,6 +18,9 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true }
   },
+  devServer: {
+    port: 3030
+  },
 
   compatibilityDate: '2026-06-30',
 
@@ -25,14 +28,5 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss()
     ]
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
   }
 })
