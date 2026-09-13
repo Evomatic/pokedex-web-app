@@ -11,19 +11,12 @@ import {
 // Nuxt 3 app aliases
 import { defineNuxtPlugin, useState } from '#imports'
 
-declare global {
-  interface Window {
-    __TANSTACK_QUERY_CLIENT__:
-    import('@tanstack/query-core').QueryClient
-  }
-}
-
 export default defineNuxtPlugin((nuxt) => {
   const vueQueryState = useState<DehydratedState | null>('vue-query')
 
   // Modify your Vue Query global settings here
   const queryClient = new QueryClient({
-    defaultOptions: { queries: { staleTime: 5000 } }
+    defaultOptions: { queries: { staleTime: 2 * 60 * 1000 } }
   })
   const options: VueQueryPluginOptions = { queryClient }
 
@@ -40,6 +33,4 @@ export default defineNuxtPlugin((nuxt) => {
       if (vueQueryState.value) hydrate(queryClient, vueQueryState.value)
     })
   }
-
-  window.__TANSTACK_QUERY_CLIENT__ = queryClient
 })

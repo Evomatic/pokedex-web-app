@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Public Sans', sans-serif;
+
+  --color-fire-tag: #ff6464;
+  --color-bug-tag: #C9FF84;
+  --color-water-tag: #9FF3FF;
+  --color-flying-tag: color-mix(#CBE9FF, #2299EE);
+  --color-poison-tag: #D89CFD;
+  --color-normal-tag: #CBCBCB;
+  --color-rock-tag: #CFC06F;
+  --color-ground-tag: #FFBF72;
+  --color-fighting-tag: #FF699F;
+  --color-ghost-tag: #B592FF;
+  --color-psychic-tag: #FF5E60;
+  --color-ice-tag: #AEFFF4;
+  --color-dragon-tag: #87C5FF;
+  --color-dark-tag: #8F8F8F;
+  --color-fairy-tag: #FFA2E3;
+  --color-electric-tag: #FFFA86;
+  --color-steel-tag: #A4FFE9;
+  --color-grass-tag: #80E177;
+
+  --color-fire-background: #EB6C6C;
+  --color-bug-background: #91AC22;
+  --color-water-background: #009ACB;
+  --color-flying-background: color-mix(#CBE9FF, #2299EE);
+  --color-poison-background: #7E00CB;
+  --color-normal-background: #B6B6B6;
+  --color-rock-background: #857D57;
+  --color-ground-background: #A77437;
+  --color-fighting-background: #BA114E;
+  --color-ghost-background: #6B2BF1;
+  --color-psychic-background: #C4484A;
+  --color-ice-background: #3A9D90;
+  --color-fire-background: #1268B8;
+  --color-dark-background: #373737;
+  --color-fairy-background: #C01A8D;
+  --color-electric-background: #B7B117;
+  --color-steel-background: #448F85;
+  --color-grass-background: #1EBA11;
+
+
+
+
+
+
+
+
+
+}
