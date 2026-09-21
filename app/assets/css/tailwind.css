@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@theme static {
-  --font-sans: 'Public Sans', sans-serif;
+@theme {
+  --font-sans: "Roboto", "sans-serif";
 
   --color-fire-tag: #ff6464;
   --color-bug-tag: #C9FF84;
@@ -41,13 +41,5 @@
   --color-electric-background: #B7B117;
   --color-steel-background: #448F85;
   --color-grass-background: #1EBA11;
-
-
-
-
-
-
-
-
 
 }

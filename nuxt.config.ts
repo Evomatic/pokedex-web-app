@@ -1,4 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
+import { createResolver } from "nuxt/kit"
+
+const { resolve } = createResolver(import.meta.url)
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -7,8 +10,19 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/google-fonts',
     '@nuxtjs/eslint-module',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxt/icon'
   ],
+  icon: {
+    customCollections: [
+      {
+        prefix: 'icon',
+        dir: resolve('./app/assets/svg'),
+        // if you want to include all the icons in nested directories:
+        // recursive: true,
+      },
+    ],
+  },
   devtools: {
     enabled: true
   },
