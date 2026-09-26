@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   icon: {
     customCollections: [
       {
-        prefix: 'icon',
+        prefix: 'svg',
         dir: resolve('./app/assets/svg'),
         // if you want to include all the icons in nested directories:
         // recursive: true,
