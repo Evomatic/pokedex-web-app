@@ -22,6 +22,8 @@
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/query-core": "^5.102.8",
     "@tanstack/vue-query": "^5.102.8",
+    "@tanstack/vue-query-devtools": "^6.3.0",
+    "@vue/devtools-api": "^8.2.1",
     "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3"
   },
@@ -31,5 +33,5 @@
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.11"
   },
-  "packageManager": "pnpm@12.3.4"
+  "packageManager": "pnpm@12.6.0"
 }
