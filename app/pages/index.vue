@@ -1,20 +1,27 @@
 <template>
-  <div />
+  <div>
+    <ul>
+      <li v-for="pokemon in pokemonQuery?.pages.flatMap((page) => page.results) ?? []" :key="pokemon.name">
+        {{ pokemon.name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { useQuery } from '@tanstack/vue-query'
-import { listPokemonOptions } from '../api'
-import { onMounted } from 'vue'
+import { useInfiniteQuery, useQuery } from '@tanstack/vue-query'
+import { pokemonOptions, evolutionChainOptions } from '../queries'
+import { watch } from 'vue'
 
+const { data: pokemonQuery } = useInfiniteQuery(pokemonOptions())
+const { data: evolutionChainQuery } = useQuery(evolutionChainOptions(1))
 
-const { data: pokemonOptions } = useQuery({
-  queryKey: ['pokemonOptions'],
-  queryFn: listPokemonOptions
+watch(pokemonQuery, () => {
+  console.log('pokemonQuery changed:', pokemonQuery.value)
 })
 
-onMounted(() => {
-  console.log('pokemonOptions', pokemonOptions)
+watch(evolutionChainQuery, () => {
+  console.log('evolutionChainQuery changed:', evolutionChainQuery.value?.chain.species.name)
 })
 </script>
 
